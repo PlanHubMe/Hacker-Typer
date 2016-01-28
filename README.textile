@@ -1,4 +1,5 @@
 h2. License 
+This was based off of another program under this copyright. Legally it must be included with this program:
 
 (c) Copyright 2011 Simone Masiero. Some Rights Reserved. 
 
