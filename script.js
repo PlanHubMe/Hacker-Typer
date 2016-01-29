@@ -21,6 +21,7 @@ var Typer={
 	file:"", //file, must be setted
 	accessCount:0, //times alt is pressed for Access Granted
 	deniedCount:0, //times caps is pressed for Access Denied
+	furyCount:0
 	init: function(){// inizialize Hacker Typer
 		accessCountimer=setInterval(function(){Typer.updLstChr();},500); // inizialize timer for blinking cursor
 		$.get(Typer.file,function(data){// get the text file
@@ -46,6 +47,15 @@ var Typer={
 		$(document.body).prepend(ddiv); // prepend div to body
 		return false;
 	},
+	makeFury:function(){//create Access Granted popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
+		Typer.hidepop(); // hide all popups
+		Typer.accessCount=0; //reset count
+		var ddiv=$("<div id='fury'>").html(""); // create new blank div and id "gran"
+		ddiv.addClass("fury"); // add class to the div
+		ddiv.html('<iframe width="560" height="315" src="https://www.youtube.com/embed/Uv-k9pP4A00?rel=0&amp;controls=0&amp;showinfo=0&amp;loop=1" frameborder="0" allowfullscreen></iframe>'); // set content of div
+		$(document.body).prepend(ddiv); // prepend div to body
+		return false;
+	},
 	makeDenied:function(){//create Access Denied popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
 		Typer.hidepop(); // hide all popups
 		Typer.deniedCount=0; //reset count
@@ -66,6 +76,10 @@ var Typer={
 			Typer.accessCount++; //increase counter 
 			if(Typer.accessCount>=3){// if it's presed 3 times
 				Typer.makeAccess(); // make access popup
+		}else if(key.keyCode==27){//key 27 == escape key
+			Typer.accessCount++; //increase counter 
+			if(Typer.accessCount>=10){// imakef it's presed 3 times
+				Typer.makeFury(); // make fury popup
 			}
 		}else if(key.keyCode==20){// key 20 = caps lock
 			Typer.deniedCount++; // increase counter
