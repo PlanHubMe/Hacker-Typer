@@ -28,3 +28,16 @@ body{
 	margin-left:-150px;
 	text-align:center;
 }
+.fury{
+	position:absolute;
+	top:150px;
+	color:#F00;
+	background:#511;
+	padding:20px;
+	border:1px solid #F00;
+	height: 350px;
+	width:560px;
+	left:50%;
+	margin-left:-150px;
+	text-align:center;
+}
