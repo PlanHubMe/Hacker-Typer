@@ -21,7 +21,7 @@ var Typer={
 	file:"", //file, must be setted
 	accessCount:0, //times alt is pressed for Access Granted
 	deniedCount:0, //times caps is pressed for Access Denied
-	furyCount:0
+	furyCount:0,
 	init: function(){// inizialize Hacker Typer
 		accessCountimer=setInterval(function(){Typer.updLstChr();},500); // inizialize timer for blinking cursor
 		$.get(Typer.file,function(data){// get the text file
@@ -47,7 +47,7 @@ var Typer={
 		$(document.body).prepend(ddiv); // prepend div to body
 		return false;
 	},
-	makeFury:function(){//create Access Granted popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
+	makeFury:function(){//create Fury popUp      FIXME: popup is on top of the page and doesn't show is the page is scrolled
 		Typer.hidepop(); // hide all popups
 		Typer.accessCount=0; //reset count
 		var ddiv=$("<div id='fury'>").html(""); // create new blank div and id "gran"
