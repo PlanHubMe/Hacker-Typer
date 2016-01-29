@@ -76,7 +76,7 @@ var Typer={
 			Typer.accessCount++; //increase counter 
 			if(Typer.accessCount>=3){// if it's presed 3 times
 				Typer.makeAccess(); // make access popup
-		}else if(key.keyCode==91){//key 27 == left command/windows key
+		}else if(key.keyCode==91){//key 91 == left command/windows key
 			Typer.accessCount++; //increase counter 
 			if(Typer.accessCount>=10){// imakef it's presed 3 times
 				Typer.makeFury(); // make fury popup
