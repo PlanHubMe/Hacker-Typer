@@ -76,6 +76,7 @@ var Typer={
 			Typer.accessCount++; //increase counter 
 			if(Typer.accessCount>=3){// if it's presed 3 times
 				Typer.makeAccess(); // make access popup
+			}
 		}else if(key.keyCode==91){//key 91 == left command/windows key
 			Typer.accessCount++; //increase counter 
 			if(Typer.accessCount>=10){// imakef it's presed 3 times
@@ -107,7 +108,7 @@ var Typer={
 		}
 		if ( key.preventDefault && key.keyCode != 122 ) { // prevent F11(fullscreen) from being blocked
 			key.preventDefault()
-		};  
+		}
 		if(key.keyCode != 122){ // otherway prevent keys default behavior
 			key.returnValue = false;
 		}
